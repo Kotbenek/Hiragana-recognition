@@ -1,0 +1,6 @@
+# Ignore this directory - instructions for obtaining the ETL Character Database are present in README.md
+*
+
+# Don't ignore this file
+!.gitignore
+

@@ -1,0 +1,9 @@
+# Ignore ETL Character Database files
+unpack.py
+euc_co59.dat
+
+# Ignore virtual environment
+venv/*
+
+# Ignore script output
+extracted/*
