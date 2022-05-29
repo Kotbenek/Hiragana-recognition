@@ -12,10 +12,10 @@ To download *ETL Character Database*, you need to accept `Conditions of Use` and
 `git clone https://github.com/Kotbenek/Hiragana-recognition.git`
 - Unzip downloaded *ETL Character Database* files into ETL directory
 - Unzip downloaded `unpack.zip` into repository root folder
-- Run `extract_hiragana.sh` script consisting of:
+- Run `create_dataset.sh` script consisting of:
     - Creation and setup of virtual python environment
     - *ETL Character Database* extraction
-    - (TODO) Extraction of hiragana dataset
+    - Hiragana dataset extraction
     - (TODO) Minor samples cleanup
     - (TODO) Creation of standardized text-based dataset files
 

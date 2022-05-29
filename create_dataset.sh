@@ -27,7 +27,8 @@ echo "Extracting ETL database..."
 python3 extract.py
 
 # Extract hiragana dataset
-# TODO
+echo "Extracting hiragana dataset..."
+python3 extract_hiragana.py
 
 # Cleanup samples
 # TODO

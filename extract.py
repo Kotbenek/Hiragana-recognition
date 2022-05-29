@@ -1,7 +1,7 @@
 import os
 import shutil
 from os import listdir
-from os.path import isfile, join, exists
+from os.path import exists
 
 etl_dirs = ["ETL/ETL1", "ETL/ETL2", "ETL/ETL3", "ETL/ETL4", "ETL/ETL5", "ETL/ETL6", "ETL/ETL7", "ETL/ETL8B", "ETL/ETL8G", "ETL/ETL9B", "ETL/ETL9G"]
 files = []
