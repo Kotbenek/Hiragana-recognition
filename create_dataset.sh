@@ -31,7 +31,8 @@ echo "Extracting hiragana dataset..."
 python3 extract_hiragana.py
 
 # Cleanup samples
-# TODO
+echo "Cleaning samples..."
+python3 samples_cleanup.py
 
 # Create standardized text-based dataset files
 # TODO
