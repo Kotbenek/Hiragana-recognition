@@ -1,3 +1,5 @@
+import os
+from os.path import exists
 from PIL import Image, ImageDraw
 
 def find_bounding_box(image):
@@ -79,5 +81,14 @@ def unify_sample(image):
     return unified_sample
 
 if __name__ == "__main__":
-    pass
+    if exists("unified_hiragana"):
+        print("Directory 'unified_hiragana' already exists.")
+        quit()
+
+    os.mkdir("unified_hiragana")
+
+    for f in os.listdir("clean_hiragana"):
+        if os.path.isfile("clean_hiragana/" + f) and f.endswith(".png"):
+            with Image.open("clean_hiragana/" + f) as image:
+                unify_sample(image).save("unified_hiragana/" + f)
 

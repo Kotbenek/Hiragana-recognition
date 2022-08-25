@@ -34,6 +34,10 @@ python3 extract_hiragana.py
 echo "Cleaning samples..."
 python3 samples_cleanup.py
 
+# Unify samples
+echo "Unifying samples..."
+python3 unify_samples.py
+
 # Create standardized text-based dataset files
 # TODO
 

@@ -17,6 +17,7 @@ To download *ETL Character Database*, you need to accept `Conditions of Use` and
     - *ETL Character Database* extraction
     - Hiragana dataset extraction
     - Minor samples cleanup
+    - Samples unification
     - (TODO) Creation of standardized text-based dataset files
 
 ## Classifier

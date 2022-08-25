@@ -9,4 +9,5 @@ venv/*
 extracted/*
 extracted_hiragana/*
 clean_hiragana/*
+unified_hiragana/*
 
