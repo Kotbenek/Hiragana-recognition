@@ -1,6 +1,8 @@
-import os
-from os.path import exists
 from PIL import Image, ImageDraw
+from common import *
+
+input_dir = "clean_hiragana"
+output_dir = "unified_hiragana"
 
 def find_bounding_box(image):
     x_size = image.size[0]
@@ -67,7 +69,7 @@ def unify_sample(image):
     else:
         ratio = y_size / sample_size_y
     
-    resized_sample = sample.resize((int(sample_size_x * ratio) - 2,int(sample_size_y * ratio) - 2), resample=Image.Resampling.NEAREST)
+    resized_sample = sample.resize((int(sample_size_x * ratio) - 2, int(sample_size_y * ratio) - 2), resample=Image.Resampling.NEAREST)
     
     sample_size_x = resized_sample.size[0]
     sample_size_y = resized_sample.size[1]
@@ -80,15 +82,14 @@ def unify_sample(image):
     
     return unified_sample
 
+def unify_samples():
+    for f in os.listdir(input_dir):
+        if os.path.isfile(input_dir + "/" + f) and f.endswith(".png"):
+            with Image.open(input_dir + "/" + f) as image:
+                unify_sample(image).save(output_dir + "/" + f)
+
 if __name__ == "__main__":
-    if exists("unified_hiragana"):
-        print("Directory 'unified_hiragana' already exists.")
-        quit()
-
-    os.mkdir("unified_hiragana")
-
-    for f in os.listdir("clean_hiragana"):
-        if os.path.isfile("clean_hiragana/" + f) and f.endswith(".png"):
-            with Image.open("clean_hiragana/" + f) as image:
-                unify_sample(image).save("unified_hiragana/" + f)
+    quit_if_dir_exists(output_dir)
+    mkdir(output_dir)
+    unify_samples()
 

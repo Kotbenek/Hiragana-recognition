@@ -1,31 +1,27 @@
-import os
-from os.path import exists
 from PIL import Image
+from common import *
 
-def check_if_dir_exists():
-    if exists("extracted_hiragana"):
-        print("Directory 'extracted_hiragana' already exists.")
-        quit()
+input_dir = "extracted"
+output_dir = "extracted_hiragana"
 
 def extract_hiragana(files):
-    os.mkdir("extracted_hiragana")
-
     i = 0
 
     for file in files:
-        with Image.open(file + ".png") as image:
+        with Image.open(input_dir + "/" + file + ".png") as image:
             for y in range(40):
                 for x in range(50):
                     width, height = image.size
                     sample_width = width // 50
                     sample_height = height // 40
                     sample = image.crop((x * sample_width, y * sample_height, (x + 1) * sample_width, (y + 1) * sample_height))
-                    sample.save("extracted_hiragana/" + format(i, "05d") + ".png");
+                    sample.save(output_dir + "/" + format(i, "05d") + ".png");
                     i = i + 1
 
 if __name__ == "__main__":
-    files = ["extracted/ETL8B2C1_00", "extracted/ETL8B2C1_01", "extracted/ETL8B2C1_02", "extracted/ETL8B2C1_03", "extracted/ETL8B2C1_04", "extracted/ETL8B2C1_05"]
+    files = ["ETL8B2C1_00", "ETL8B2C1_01", "ETL8B2C1_02", "ETL8B2C1_03", "ETL8B2C1_04", "ETL8B2C1_05"]
 
-    check_if_dir_exists()
+    quit_if_dir_exists(output_dir)
+    mkdir(output_dir)
     extract_hiragana(files)
 

@@ -1,12 +1,9 @@
 import os
 import shutil
 from os import listdir
-from os.path import exists
+from common import *
 
-def check_if_dir_exists():
-    if exists("extracted"):
-        print("Directory 'extracted' already exists.")
-        quit()
+output_dir = "extracted"
 
 def create_file_list(etl_dirs, files):
     for dir in etl_dirs:
@@ -28,18 +25,17 @@ def create_extracted_file_list(etl_dirs, files):
                 files.append(dir + "/" + f)
 
 def move_extracted_files_to_dedicated_dir(files):
-    os.mkdir("extracted")
-
-    print("Moving files to 'extracted' directory...")
+    print("Moving files to '" + output_dir + "' directory...")
 
     for f in files:
-        shutil.move(f, "extracted")
+        shutil.move(f, output_dir)
 
 if __name__ == "__main__":
     etl_dirs = ["ETL/ETL1", "ETL/ETL2", "ETL/ETL3", "ETL/ETL4", "ETL/ETL5", "ETL/ETL6", "ETL/ETL7", "ETL/ETL8B", "ETL/ETL8G", "ETL/ETL9B", "ETL/ETL9G"]
     files = []
 
-    check_if_dir_exists()
+    quit_if_dir_exists(output_dir)
+    mkdir(output_dir)
     create_file_list(etl_dirs, files)
     extract_files(files)
     create_extracted_file_list(etl_dirs, files)

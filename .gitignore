@@ -11,3 +11,6 @@ extracted_hiragana/*
 clean_hiragana/*
 unified_hiragana/*
 
+# Ignore python cache
+__pycache__/*
+
