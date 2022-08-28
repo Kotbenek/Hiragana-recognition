@@ -35,8 +35,8 @@ echo "Cleaning samples..."
 python3 samples_cleanup.py
 
 # Unify samples
-echo "Unifying samples..."
-python3 unify_samples.py
+echo "Unifying size of samples..."
+python3 unify_size_of_samples.py
 
 # Create standardized text-based dataset files
 # TODO
