@@ -38,6 +38,7 @@ python3 samples_cleanup.py
 echo "Unifying size of samples..."
 python3 unify_size_of_samples.py
 
-# Create standardized text-based dataset files
-# TODO
+# Create text-based dataset files
+echo "Creating text-based dataset files..."
+python3 create_dataset_files.py
 
