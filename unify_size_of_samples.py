@@ -1,4 +1,4 @@
-from PIL import Image, ImageDraw
+from PIL import Image
 from common import *
 
 input_dir = "clean_hiragana"
