@@ -1,5 +1,6 @@
 import os
 from os.path import exists
+import pickle
 
 def quit_if_dir_exists(dir):
     if exists(dir):
@@ -35,5 +36,14 @@ def load_dataset_labels(path):
             if not line:
                 break
             data.append(hiragana_to_id(line.rstrip()))
+    return data
+
+def dump_obj_to_file(obj, path):
+    with open(path, 'wb') as f:
+        pickle.dump(obj, f)
+
+def load_obj_from_file(path):
+    with open(path, 'rb') as f:
+        data = pickle.load(f)
     return data
 

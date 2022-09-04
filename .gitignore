@@ -11,6 +11,7 @@ extracted_hiragana/*
 clean_hiragana/*
 unified_hiragana/*
 hiragana_dataset/*
+binary_dataset/*
 
 # Ignore python cache
 __pycache__/*
