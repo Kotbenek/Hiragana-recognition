@@ -38,50 +38,50 @@ def write_dataset_150_10(data, labels):
     local_output_dir = output_dir + "/" + "150_10"
     mkdir(local_output_dir)
 
-    with open(local_output_dir + "/" + "train.txt", 'w') as f_train:
-        with open(local_output_dir + "/" + "train_labels.txt", 'w') as f_train_labels:
-            with open(local_output_dir + "/" + "test.txt", 'w') as f_test:
-                with open(local_output_dir + "/" + "test_labels.txt", 'w') as f_test_labels:
-                    i = 0
-                    j = 0
-                    for sample in data:
-                        if i < 150:
-                            f_train.write(f"{sample}\n")
-                            f_train_labels.write(f"{labels[j]}\n")
-                        else:
-                            f_test.write(f"{sample}\n")
-                            f_test_labels.write(f"{labels[j]}\n")
-                        i = i + 1
-                        j = j + 1
-                        if i == 160:
-                            i = 0
+    with open(local_output_dir + "/" + "train.txt", 'w') as f_train, \
+         open(local_output_dir + "/" + "train_labels.txt", 'w') as f_train_labels, \
+         open(local_output_dir + "/" + "test.txt", 'w') as f_test, \
+         open(local_output_dir + "/" + "test_labels.txt", 'w') as f_test_labels:
+        i = 0
+        j = 0
+        for sample in data:
+            if i < 150:
+                f_train.write(f"{sample}\n")
+                f_train_labels.write(f"{labels[j]}\n")
+            else:
+                f_test.write(f"{sample}\n")
+                f_test_labels.write(f"{labels[j]}\n")
+            i = i + 1
+            j = j + 1
+            if i == 160:
+                i = 0
 
 def write_dataset_140_10_10(data, labels):
     local_output_dir = output_dir + "/" + "140_10_10"
     mkdir(local_output_dir)
 
-    with open(local_output_dir + "/" + "train.txt", 'w') as f_train:
-        with open(local_output_dir + "/" + "train_labels.txt", 'w') as f_train_labels:
-            with open(local_output_dir + "/" + "test.txt", 'w') as f_test:
-                with open(local_output_dir + "/" + "test_labels.txt", 'w') as f_test_labels:
-                    with open(local_output_dir + "/" + "validation.txt", 'w') as f_validation:
-                        with open(local_output_dir + "/" + "validation_labels.txt", 'w') as f_validation_labels:
-                            i = 0
-                            j = 0
-                            for sample in data:
-                                if i < 140:
-                                    f_train.write(f"{sample}\n")
-                                    f_train_labels.write(f"{labels[j]}\n")
-                                elif i < 150:
-                                    f_test.write(f"{sample}\n")
-                                    f_test_labels.write(f"{labels[j]}\n")
-                                else:
-                                    f_validation.write(f"{sample}\n")
-                                    f_validation_labels.write(f"{labels[j]}\n")
-                                i = i + 1
-                                j = j + 1
-                                if i == 160:
-                                    i = 0
+    with open(local_output_dir + "/" + "train.txt", 'w') as f_train, \
+         open(local_output_dir + "/" + "train_labels.txt", 'w') as f_train_labels, \
+         open(local_output_dir + "/" + "test.txt", 'w') as f_test, \
+         open(local_output_dir + "/" + "test_labels.txt", 'w') as f_test_labels, \
+         open(local_output_dir + "/" + "validation.txt", 'w') as f_validation, \
+         open(local_output_dir + "/" + "validation_labels.txt", 'w') as f_validation_labels:
+        i = 0
+        j = 0
+        for sample in data:
+            if i < 140:
+                f_train.write(f"{sample}\n")
+                f_train_labels.write(f"{labels[j]}\n")
+            elif i < 150:
+                f_test.write(f"{sample}\n")
+                f_test_labels.write(f"{labels[j]}\n")
+            else:
+                f_validation.write(f"{sample}\n")
+                f_validation_labels.write(f"{labels[j]}\n")
+            i = i + 1
+            j = j + 1
+            if i == 160:
+                i = 0
 
 if __name__ == "__main__":
     quit_if_dir_exists(output_dir)
