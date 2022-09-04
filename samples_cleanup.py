@@ -29,25 +29,25 @@ def change_pixels_to_white(image, coords):
 
 def copy_samples_not_needing_repair(files):
     for f in os.listdir(input_dir):
-        if os.path.isfile(input_dir + "/" + f) and f.endswith(".png"):
+        if os.path.isfile(f"{input_dir}/{f}") and f.endswith(".png"):
             if f[:-4] not in files:
-                shutil.copy(input_dir + "/" + f, output_dir)
+                shutil.copy(f"{input_dir}/{f}", output_dir)
 
 def clean_samples(files, files_needing_reconstruction, pixels):
     for i in range(len(files)):
-        with Image.open(input_dir + "/" + files[i] + ".png") as image:
+        with Image.open(f"{input_dir}/{files[i]}.png") as image:
             if files[i] not in files_needing_reconstruction:
                 fixed_image = change_pixels_to_black(image, pixels[i])
-                fixed_image.save(output_dir + "/" + files[i] + ".png")
+                fixed_image.save(f"{output_dir}/{files[i]}.png")
             else:
                 if files[i] == files_needing_reconstruction[0]:
                     fixed_image = change_pixels_to_white(image, pixels[i])
-                    fixed_image.save(output_dir + "/" + files[i] + ".png")
+                    fixed_image.save(f"{output_dir}/{files[i]}.png")
                 if files[i] == files_needing_reconstruction[1]:
                     fixed_image = Image.new('L', (image.size[0], image.size[1]), 0)
                     fixed_image.paste(image, (0, -10))
                     fixed_image = change_pixels_to_white(fixed_image, pixels[i])
-                    fixed_image.save(output_dir + "/" + files[i] + ".png")
+                    fixed_image.save(f"{output_dir}/{files[i]}.png")
 
 if __name__ == "__main__":
     files = [

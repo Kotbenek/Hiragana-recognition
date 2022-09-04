@@ -8,14 +8,14 @@ def extract_hiragana(files):
     i = 0
 
     for file in files:
-        with Image.open(input_dir + "/" + file + ".png") as image:
+        with Image.open(f"{input_dir}/{file}.png") as image:
             for y in range(40):
                 for x in range(50):
                     width, height = image.size
                     sample_width = width // 50
                     sample_height = height // 40
                     sample = image.crop((x * sample_width, y * sample_height, (x + 1) * sample_width, (y + 1) * sample_height))
-                    sample.save(output_dir + "/" + format(i, "05d") + ".png");
+                    sample.save(f"{output_dir}/{i:05d}.png")
                     i = i + 1
 
 if __name__ == "__main__":
