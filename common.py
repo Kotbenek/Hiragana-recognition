@@ -30,9 +30,11 @@ hiraganas_no_small = [
 ]
 
 def hiragana_to_id(hiragana):
+    # FIXME: support both hiraganas and hiraganas_no_small
     return hiraganas_no_small.index(hiragana)
 
 def id_to_hiragana(id):
+    # FIXME: support both hiraganas and hiraganas_no_small
     return hiraganas_no_small[id]
 
 def load_dataset_samples(path):

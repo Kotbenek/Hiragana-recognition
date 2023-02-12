@@ -15,6 +15,7 @@ binary_dataset/*
 hiragana_labels.txt
 hiragana_no_small_labels.txt
 unified_hiragana_no_small/*
+models/*
 
 # Ignore python cache
 __pycache__/*
