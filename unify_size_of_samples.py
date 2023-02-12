@@ -56,6 +56,9 @@ def find_bounding_box(image):
 def unify_sample(image):
     x_size = image.size[0]
     y_size = image.size[1]
+
+    x_size = max(x_size, y_size)
+    y_size = max(x_size, y_size)
     
     bounding_box = find_bounding_box(image)
     
@@ -69,7 +72,7 @@ def unify_sample(image):
     else:
         ratio = y_size / sample_size_y
     
-    resized_sample = sample.resize((int(sample_size_x * ratio) - 2, int(sample_size_y * ratio) - 2), resample=Image.Resampling.NEAREST)
+    resized_sample = sample.resize((int(sample_size_x * ratio), int(sample_size_y * ratio)), resample=Image.Resampling.NEAREST)
     
     sample_size_x = resized_sample.size[0]
     sample_size_y = resized_sample.size[1]
@@ -77,7 +80,7 @@ def unify_sample(image):
     centered_left = (x_size - sample_size_x) // 2
     centered_top = (y_size - sample_size_y) // 2
     
-    unified_sample = Image.new('L', (image.size[0], image.size[1]), 0)
+    unified_sample = Image.new('L', (x_size, y_size), 0)
     unified_sample.paste(resized_sample, (centered_left,centered_top))
     
     return unified_sample
