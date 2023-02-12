@@ -1,4 +1,5 @@
 bitstring
 pillow
 jaconv
-
+tensorflow
+matplotlib
