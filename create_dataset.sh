@@ -38,7 +38,7 @@ python3 samples_cleanup.py
 echo "Unifying size of samples..."
 python3 unify_size_of_samples.py
 
-# Create text-based dataset files
-echo "Creating text-based dataset files..."
-python3 create_dataset_files.py
+# Remove small characters
+echo "Removing small characters..."
+python3 remove_small_characters.py
 

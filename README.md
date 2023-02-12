@@ -21,7 +21,7 @@ To download `unpack.zip`, go to [http://etlcdb.db.aist.go.jp/file-formats-and-sa
     - Hiragana dataset extraction
     - Minor samples cleanup
     - Samples size unification
-    - Text-based dataset files creation
+    - Small characters removal
 
 ## Classifier
 
