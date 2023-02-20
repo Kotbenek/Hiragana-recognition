@@ -1,6 +1,6 @@
 # Hiragana recognition
 
-WIP hiragana recognition utility
+Handwritten hiragana recognition software.
 
 ## Obtaining the ETL Character Database
 
