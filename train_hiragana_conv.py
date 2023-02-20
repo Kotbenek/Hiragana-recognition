@@ -10,7 +10,7 @@ REPEAT_COUNT = 10
 
 def build_model():
     model = tf.keras.models.Sequential()
-    model.add(tf.keras.layers.Conv2D(filters=32, kernel_size=3, activation='relu', input_shape=(64, 64, 1)))
+    model.add(tf.keras.layers.Conv2D(filters=32, kernel_size=3, activation='relu', input_shape=train_data[0].shape))
     model.add(tf.keras.layers.MaxPooling2D((2, 2)))
     model.add(tf.keras.layers.Dropout(0.25))
     model.add(tf.keras.layers.Conv2D(filters=32, kernel_size=3, activation='relu'))
