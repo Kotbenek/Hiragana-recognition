@@ -25,7 +25,10 @@ To download `unpack.zip`, go to [http://etlcdb.db.aist.go.jp/file-formats-and-sa
 
 ## Classifier
 
-TODO
+Run `train_hiragana_conv.sh` to train your own CNN classifier, or use `model.h5`.  
+This model has 99.15% accuracy. Learning curves are shown below.
+
+<img src="images/model_learning_curves.png">
 
 ## Character recognition
 
