@@ -32,5 +32,11 @@ This model has 99.15% accuracy. Learning curves are shown below.
 
 ## Character recognition
 
-TODO
+Run `recognize.sh` to launch the program.  
+To draw on canvas, hold left mouse button. To clear canvas, use `CLEAR` button.
 
+## Images
+
+<img src="images/recognize_1.png">
+<img src="images/recognize_2.png">
+<img src="images/recognize_3.png">
