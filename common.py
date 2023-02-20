@@ -96,8 +96,8 @@ def unify_sample(image):
 
     sample = image.crop((bounding_box[0], bounding_box[2], bounding_box[1] + 1, bounding_box[3] + 1))
 
-    sample_size_x = bounding_box[1] - bounding_box[0]
-    sample_size_y = bounding_box[3] - bounding_box[2]
+    sample_size_x = bounding_box[1] - bounding_box[0] + 1
+    sample_size_y = bounding_box[3] - bounding_box[2] + 1
 
     if x_size - sample_size_x < y_size - sample_size_y:
         ratio = x_size / sample_size_x
