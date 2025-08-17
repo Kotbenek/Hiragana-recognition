@@ -1,3 +1,8 @@
+# Moved to Codeberg
+
+This repository was moved to Codeberg:
+https://codeberg.org/Kotbenek/Hiragana-recognition
+
 # Hiragana recognition
 
 Handwritten hiragana recognition software.
